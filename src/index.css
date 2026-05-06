@@ -11,8 +11,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: ui-monospace, Andale Mono, monospace;
+  --heading: ui-monospace, Andale Mono, monospace;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -51,15 +51,14 @@
 }
 
 #root {
-  width: 1126px;
+  width: 60%;
   max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  margin: 1.5em auto;
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  min-height: 80vh;
 }
 
 body {
@@ -67,10 +66,17 @@ body {
 }
 
 h1,
-h2 {
+h2,
+.title-link {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
+}
+
+h3 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text);
 }
 
 h1 {
@@ -83,6 +89,26 @@ h1 {
   }
 }
 h2 {
+  font-size: 32px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+.title-link {
+  font-size: 32px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+h3 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
@@ -93,19 +119,4 @@ h2 {
 }
 p {
   margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }
