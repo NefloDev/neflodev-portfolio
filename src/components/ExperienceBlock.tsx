@@ -12,7 +12,8 @@ export default class ExperienceBlock extends Component {
             item.title,
             item.startYear,
             item.endYear,
-            item.tasks,
+            item.description,
+            item.url,
           ),
         )}
       </div>

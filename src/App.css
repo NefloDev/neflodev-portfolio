@@ -1,18 +1,64 @@
-.web-app {
+.smaller-heading{
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.secondary-heading {
+  font-size: 48px;
+  margin: 20px 0;
+  @media (max-width: 1024px) {
+    font-size: 32px;
+    margin: 20px 0;
+  }
+
+  font-family: var(--heading);
+  font-weight: bold;
+  color: var(--accent-secondary);
+}
+
+#left-panel {
+  height: 100%;
+  width: 25vw;
+
+  padding-top: 4em;
+  padding-left: 10vw;
+
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 40vh;
+
+  overflow-x: hidden;
+}
+
+#right-panel {
+  height: 100%;
+  margin-left: 30vw;
+  padding-right: 2em;
+  padding-top: 2em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.web-app {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 }
 
 #introduction {
   display: flex;
-  flex-direction: row;;
-
-  margin: 0 2em;
+  flex-direction: row;
 }
 
 .about-desc {
-  margin: 0 2em;
   text-align: justify;
 }
 
@@ -21,18 +67,57 @@
   flex-direction: column;
 }
 
-.experience-block, .technologies-block {
+.experience {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  text-align: justify;
   gap: 0em 4em;
-  margin: 2em;
+  margin: 2em 0;
 }
 
 .project-list {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  margin: 0 2em;
+  margin: 2em 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+
+  align-items: center;
+
+  position: relative;
+  bottom: 0;
+}
+
+.github-logo {
+  width: 24px;
+}
+
+.github-logo-path{
+  fill: #fff
+}
+
+.github-logo:hover > .github-logo-path {
+  fill: var(--accent)
+}
+
+.linkedin-logo {
+  width: 32px;
+}
+
+.linkedin-logo-path{
+  fill: #fff;
+}
+
+.linkedin-logo:hover > .linkedin-logo-path {
+  fill: var(--accent);
 }
