@@ -41,7 +41,8 @@ export default function RightPanel({ arrayItems }: { arrayItems: RepoInfo[] }) {
             .filter(
               (repo: RepoInfo) =>
                 repo.visibility.match("public") != null &&
-                repo.name !== "NefloDev",
+                repo.name !== "NefloDev" &&
+                repo.name !== "neflodev-portfolio",
             )
             .map((repo) => (
               <ProjectItem
