@@ -1,9 +1,9 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --border: #2e303a;
+  --code-bg: #1f2028;
   --accent: #ceb9ff;
   --accent-secondary: #4f3a83;
   --accent-bg: rgba(170, 59, 255, 0.1);
@@ -21,7 +21,11 @@
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
-  background-image: linear-gradient(135deg, var(--accent-bg), var(--accent-border));
+  background-image: linear-gradient(
+    135deg,
+    var(--accent-bg),
+    var(--accent-border)
+  );
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -29,27 +33,6 @@
 
   @media (max-width: 1024px) {
     font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #ceb9ff;
-    --accent-secondary: #4f3a83;
-    --accent-bg: rgba(170, 59, 255, 0.1);
-    --accent-border: #241447;
-    --social-bg: rgba(244, 243, 236, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
   }
 }
 
