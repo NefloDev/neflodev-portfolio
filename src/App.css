@@ -1,85 +1,81 @@
-.smaller-heading{
+.smaller-heading {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--accent);
 }
 
 .secondary-heading {
-  font-size: 48px;
-  margin: 20px 0;
-  @media (max-width: 1024px) {
-    font-size: 32px;
-    margin: 20px 0;
-  }
-
-  font-family: var(--heading);
-  font-weight: bold;
-  color: var(--accent-secondary);
-}
-
-#left-panel {
-  height: 100%;
-  width: 25vw;
-
-  padding-top: 4em;
-  padding-left: 10vw;
-
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-
-  display: flex;
-  flex-direction: column;
-  gap: 40vh;
-
-  overflow-x: hidden;
-}
-
-#right-panel {
-  height: 100%;
-  margin-left: 30vw;
-  padding-right: 2em;
-  padding-top: 2em;
-
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  font-weight: 400;
+  color: var(--text);
+  opacity: 0.75;
+  margin: 0;
 }
 
 .web-app {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  min-height: 100vh;
+  background: var(--panel-bg);
 }
 
-#introduction {
+#left-panel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: clamp(2em, 4vw, 4em);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 2em;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
-.about-desc {
-  text-align: justify;
+#right-panel {
+  padding: clamp(2em, 4vw, 4em);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2em, 3vw, 4em);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  gap: 0.6em;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+}
+
+.about-desc {
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  line-height: 175%;
 }
 
 .experience {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0em 4em;
-  margin: 2em 0;
+  gap: 0em clamp(1em, 4vw, 4em);
+  padding-top: clamp(1.5em, 2vw, 2.5em);
+  border-top: 1px solid var(--border);
+}
+
+.projects {
+  padding-top: clamp(1.5em, 2vw, 2.5em);
+  border-top: 1px solid var(--border);
 }
 
 .project-list {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  margin: 2em 0;
+  gap: clamp(0.5em, 1vw, 1em);
 }
 
 a {
@@ -87,37 +83,80 @@ a {
   text-decoration: none;
 }
 
-.links {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-
-  align-items: center;
-
-  position: relative;
-  bottom: 0;
-}
-
 .github-logo {
-  width: 24px;
+  width: clamp(1.5rem, 3vw, 3rem);
 }
 
-.github-logo-path{
-  fill: #fff
+.github-logo-path {
+  fill: #fff;
 }
 
 .github-logo:hover > .github-logo-path {
-  fill: var(--accent)
+  fill: var(--accent);
 }
 
 .linkedin-logo {
-  width: 32px;
+  width: clamp(2rem, 4.3vw, 4.3rem);
 }
 
-.linkedin-logo-path{
+.linkedin-logo-path {
   fill: #fff;
 }
 
 .linkedin-logo:hover > .linkedin-logo-path {
   fill: var(--accent);
+}
+
+#introduction {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 1024px) {
+  .web-app {
+    grid-template-columns: 35% 1fr;
+  }
+
+  #left-panel {
+    padding: clamp(1.5em, 3vw, 3em) clamp(1.5em, 2vw, 2em);
+  }
+
+  #right-panel {
+    padding: clamp(1.5em, 3vw, 3em) clamp(1.5em, 2vw, 2em);
+  }
+}
+
+@media (max-width: 768px) {
+  .web-app {
+    grid-template-columns: 1fr;
+  }
+
+  #left-panel {
+    position: static;
+    height: auto;
+    padding: 2em 1.5em;
+    gap: 1.5em;
+    border-bottom: 1px solid var(--border);
+  }
+
+  #right-panel {
+    padding: 1.5em;
+    gap: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  #left-panel {
+    padding: 1.5em 1em;
+  }
+
+  #right-panel {
+    padding: 1em;
+    gap: 1.5em;
+  }
+
+  .experience {
+    flex-direction: column;
+    gap: 0.75em;
+  }
 }

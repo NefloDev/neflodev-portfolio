@@ -1,18 +1,16 @@
 .project-item {
   position: relative;
-
   text-decoration: none;
-  text-align: justify;
   color: var(--text);
-
   border-radius: 5px;
-  padding: 1em 2em;
+  padding: 1em clamp(1em, 2vw, 2em);
 }
 
 .arrow-up-right {
-  width: 20px;
+  width: clamp(1.25rem, 1.5vw, 1.75rem);
+  height: clamp(1.25rem, 1.5vw, 1.75rem);
   position: absolute;
-  margin: 0.75em 0.5em 0 0;
+  margin: 0.5em 0.5em 0 0;
   z-index: 1;
   top: 0;
   right: 0;
@@ -33,9 +31,24 @@
 }
 
 .project-info > h2 {
-  font-size: 20px;
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  margin: 0 0 0.3em;
+  line-height: 130%;
 }
 
 .project-info > p {
-  font-size: 14px;
+  font-size: clamp(0.8rem, 0.9vw, 0.95rem);
+  line-height: 165%;
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    padding: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-item {
+    padding: 0.75em;
+  }
 }
