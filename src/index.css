@@ -2,7 +2,7 @@
   --text: #9ca3af;
   --text-h: #f3f4f6;
   --bg: #16171d;
-  --panel-bg: #12131866;
+  --panel-bg: #100c1a;
   --border: #2e303a;
   --code-bg: #1f2028;
   --accent: #ceb9ff;
@@ -17,7 +17,7 @@
   --heading: ui-monospace, Andale Mono, monospace;
   --mono: ui-monospace, Consolas, monospace;
 
-  font: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem) / 150% var(--sans);
+  font: clamp(0.8125rem, 0.75rem + 0.25vw, 0.9375rem) / 150% var(--sans);
   letter-spacing: clamp(0.02em, 0.1vw, 0.08rem);
   color-scheme: light dark;
   color: var(--text);
@@ -66,7 +66,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3.6rem);
   margin: 0 0 0.15em;
   line-height: 90%;
 }

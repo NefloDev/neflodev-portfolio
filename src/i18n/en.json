@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "subtitle": "Software Developer",
+    "tagline": "I turn coffee into APIs"
+  },
+  "about": {
+    "p1": "Software developer specialized in the design, implementation and optimization of microservices with Spring Boot. Experienced in building scalable solutions, improving performance, and handling large volumes of data.",
+    "p2_before": "I am currently working on microservices development at",
+    "p2_company": "NTT Data",
+    "p2_after": "where I develop and maintain backend applications, optimize processes, and provide technical support in high-volume data projects, collaborating with teams and clients on monitoring and solution evolution.",
+    "p3": "In my free time I enjoy going to the gym, playing music, making plans with friends, spending time with my cat, or losing too many hours playing video games and watching series where I was \"only going to watch one episode\"."
+  },
+  "section": {
+    "experience": "Experience",
+    "projects": "Projects"
+  },
+  "experience": [
+    {
+      "title": "Technical Senior Specialist, Development - NTT Data",
+      "startYear": "2024",
+      "endYear": "Present",
+      "description": "Participation in the development and maintenance of backend applications, collaborating in process optimization and performance improvement in high-volume data environments. Involvement in requirements analysis, planning and task tracking, as well as technical support to the team in resolving incidents and adopting best practices.",
+      "url": "https://es.nttdata.com/"
+    }
+  ]
+}

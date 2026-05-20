@@ -1,13 +1,21 @@
 import { ArrowUpRight } from ".";
 import "../static/ExperienceItem.css";
 
-export default function ExperienceItem(
-  title: string,
-  startYear: string,
-  endYear: string,
-  description: string,
-  url: string,
-) {
+interface ExperienceItemProps {
+  title: string;
+  startYear: string;
+  endYear: string;
+  description: string;
+  url: string;
+}
+
+export default function ExperienceItem({
+  title,
+  startYear,
+  endYear,
+  description,
+  url,
+}: ExperienceItemProps) {
   return (
     <a
       className="experience-item"

@@ -1,3 +1,4 @@
+import "./ArrowUpRight.css";
 import type { SVGProps } from "react";
 
 const SvgArrowUpRight = (props: SVGProps<SVGSVGElement>) => (

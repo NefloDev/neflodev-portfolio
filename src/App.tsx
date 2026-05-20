@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { RepoInfo } from "./models/RepoInfo";
 import RightPanel from "./components/RightPanel";
-import { GithubLogo, LinkedinLogo } from "./components";
+import { GithubLogo, LinkedinLogo, LanguageDropdown } from "./components";
+import { I18nProvider, useTranslation } from "./i18n";
 
-export default function App() {
+function AppContent() {
   const [arrayItems, setArrayItems] = useState<RepoInfo[]>([]);
+  const { t, locale, setLocale } = useTranslation();
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -36,24 +38,31 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <div className="web-app">
-        <section id="left-panel">
-          <div className="info">
-            <h1>Alejandro Nebot Flores</h1>
-            <h2 className="smaller-heading">Desarrollador de Software</h2>
-            <h2 className="secondary-heading">Convierto el café en APIs</h2>
-          </div>
-          <div className="links">
-            <GithubLogo />
-            <LinkedinLogo />
-          </div>
-        </section>
+    <div className="web-app">
+      <section id="left-panel">
+        <div className="info">
+          <h1>Alejandro Nebot Flores</h1>
+          <h2 className="smaller-heading">{t("nav.subtitle")}</h2>
+          <h2 className="secondary-heading">{t("nav.tagline")}</h2>
+        </div>
+        <LanguageDropdown locale={locale} setLocale={setLocale} />
+        <div className="links">
+          <GithubLogo />
+          <LinkedinLogo />
+        </div>
+      </section>
 
-        <section id="right-panel">
-          <RightPanel arrayItems={arrayItems} />
-        </section>
-      </div>
-    </>
+      <section id="right-panel">
+        <RightPanel arrayItems={arrayItems} />
+      </section>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <I18nProvider>
+      <AppContent />
+    </I18nProvider>
   );
 }
